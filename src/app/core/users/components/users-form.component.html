@@ -1,0 +1,50 @@
+<div class="w-screen bg-gray-100 shadow p-4">
+    <form (ngSubmit)="saveUser()">
+        <div class="w-1/2 m-4 space-y-4">
+            <div>
+                <label for="fullName" class="block m-1">Name</label>
+                <input
+                    for="fullName"
+                    type="text"
+                    class="border rounded-md p-2 w-full outline-none"
+                    name="fullName"
+                    [(ngModel)]="user.fullName"
+                />
+            </div>
+            <div>
+                <label for="Address" class="block m-1">Address</label>
+                <input
+                    for="Address"
+                    type="text"
+                    class="border rounded-md p-2 w-full outline-none"
+                    name="address"
+                    [(ngModel)]="user.address"
+                />
+            </div>
+            <div>
+                <label for="City" class="block m-1">City</label>
+                <input
+                    for="City"
+                    type="text"
+                    class="border rounded-md p-2 w-full outline-none"
+                    name="city"
+                    [(ngModel)]="user.city"
+                />
+            </div>
+            <div class="block">
+                <button
+                    type="submit"
+                    class="border bg-blue-100 rounded-md p-2 w-28"
+                >
+                    Save
+                </button>
+                <span class="ml-4 text-green-700" [hidden]="actionSuccess !== 1"
+                    >User saved Successfully!</span
+                >
+                <span class="ml-4 text-red-700" [hidden]="actionSuccess !== 2"
+                    >User saving failed!</span
+                >
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,59 @@
+<p class="pl-4 text-lg font-medium">Users</p>
+<div class="h-96">
+    <div class="m-4 shadow p-3 table w-full">
+        <div class="table-header-group">
+            <div class="table-row font-medium mr-8">
+                <div
+                    class="flex table-cell justify-center border-b border-slate-100 dark:border-slate-700 p-4 pl-8"
+                >
+                    Id
+                </div>
+                <div
+                    class="flex table-cell justify-center border-b border-slate-100 dark:border-slate-700 p-4 pl-8"
+                >
+                    Full Name
+                </div>
+                <div
+                    class="flex table-cell justify-center border-b border-slate-100 dark:border-slate-700 p-4 pl-8"
+                >
+                    Address
+                </div>
+                <div
+                    class="flex justify-center table-cell border-b border-slate-100 dark:border-slate-700 p-4 pl-8"
+                >
+                    City
+                </div>
+            </div>
+        </div>
+        <div class="table-row-group relative" *ngFor="let user of users">
+            <div
+                class="table-row cursor-pointer"
+                [routerLink]="['/users/', user.userId]"
+            >
+                <div class="flex justify-center table-cell p-4 pl-8">
+                    {{ user.userId }}
+                </div>
+                <div class="flex justify-center table-cell p-4 pl-8">
+                    {{ user.fullName }}
+                </div>
+                <div class="flex justify-center table-cell p-4 pl-8">
+                    {{ user.address }}
+                </div>
+                <div class="flex justify-center table-cell p-4 pl-8">
+                    {{ user.city }}
+                </div>
+            </div>
+            <button
+                class="w-5 inline-block absolute right-5 top-0 bottom-0"
+                (click)="deleteUser(user.userId)"
+            >
+                <fa-icon [icon]="faTrash" class="text-red-700"></fa-icon>
+            </button>
+        </div>
+    </div>
+    <div class="flex justify-end mr-4">
+        <button class="border bg-blue-100 border-md p-2" routerLink="new-user">
+            Create user
+        </button>
+    </div>
+</div>
