@@ -1,0 +1,3 @@
+[submodule "azure-cloud-practice"]
+	path = azure-cloud-practice
+	url = https://github.com/micha3l999/azure-cloud-practice.git
